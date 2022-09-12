@@ -1,1 +1,86 @@
-<p>home works!</p>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav [(opened)]="opened" mode="side">
+      <div class="list background">
+        <img src="assets/logo.jpg" style="width: 100%;margin-bottom: -1%;"> 
+      </div> 
+      <mat-list>
+        <mat-list-item id="sidenav-item" routerLink="/registration" (click)="CloseOnClick()"
+          routerLinkActive="active-list-item">
+          <mat-icon>assignment</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Registration</span>
+        </mat-list-item>
+
+        <mat-list-item *ngIf="admin" id="sidenav-item" routerLink="/listAll" (click)="CloseOnClick()"
+          routerLinkActive="active-list-item">
+          <mat-icon>list</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">List All</span>
+        </mat-list-item>
+
+        
+
+        <mat-list-item *ngIf="admin" id="sidenav-item" routerLink="/branch/computer" (click)="OpenOnClick()"
+          routerLinkActive="active-list-item">
+          <mat-icon>line_weight</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Brach</span>
+          <mat-icon *ngIf="!coloractive" style="padding-left:10px" class="ml-auto"> keyboard_arrow_down
+          </mat-icon>
+          <mat-icon *ngIf="coloractive" style="padding-left:10px" class="ml-auto"> keyboard_arrow_up
+          </mat-icon>
+        </mat-list-item>
+
+
+        <mat-list-item *ngIf=show id="sidenav-item" routerLink="/branch/computer"
+          routerLinkActive="active-list-item">
+          <mat-icon>computer</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Computer</span>
+        </mat-list-item>
+
+        <mat-list-item *ngIf=show id="sidenav-item" routerLink="/branch/civil"
+          routerLinkActive="active-list-item">
+          <mat-icon>home</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Civil</span>
+        </mat-list-item>
+
+        <mat-list-item *ngIf=show id="sidenav-item" routerLink="/branch/entc"
+          routerLinkActive="active-list-item">
+          <mat-icon>electricity</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">ENTC</span>
+        </mat-list-item>
+
+        <mat-list-item *ngIf="admin" id="sidenav-item" routerLink="teacherInfo" (click)="CloseOnClick()"
+          routerLinkActive="active-list-item">
+          <mat-icon>assignment_ind</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Teachers Info</span>
+        </mat-list-item>
+
+      </mat-list>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <button mat-icon-button (click)="opened=!opened">
+
+          <div *ngIf="!opened" class="menu_icon1">
+            <mat-icon id="dash-icon">menu_open</mat-icon>
+          </div>
+          <div *ngIf="opened" class="menu_icon">
+            <mat-icon id="dash-icon">menu_open</mat-icon>
+          </div>
+
+        </button>
+
+        <div class="ml-auto user-name" style="font-size: 1.1vw;text-transform:uppercase;"> WELCOME
+          {{Name}}
+        </div>
+
+        <div class="ml-auto user-name" style="font-size: 1.1vw;position: absolute;
+        right: 2%;">
+          <button mat-icon-button (click)="logout()">
+            <mat-icon style="margin-top: -15%">settings_power</mat-icon>
+          </button>
+        </div>
+
+      </mat-toolbar>
+
+      <div class="main-content">
+
+      </div>
+
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>

@@ -1,0 +1,92 @@
+.mainBody .row {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .child {
+    display: none;
+  }
+  
+  mat-list-item:hover {
+    color: white !important;
+    background-color: rgba(238, 238, 238, 0.425);
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  #color_code,
+  #color_name {
+    padding-left: 15px;
+  }
+  
+  mat-toolbar {
+    background-color: coral;
+    color: white;
+  }
+  
+  mat-sidenav {
+    background-color: coral !important;
+    width: 18% !important;
+    color: white;
+  }
+  
+  .menu_icon,
+  .menu_icon1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #dash-icon {
+    font-size: 30px;
+  }
+  .menu_icon1 {
+    transform: rotate(180deg);
+  }
+  
+  .mat-icon-button {
+    outline: none !important;
+  }
+  
+  #sidenav-item {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .mat-list-base,
+  .mat-list-item,
+  .mat-list-item-content {
+    padding: 0px 8px !important;
+    height: 40px !important;
+    margin-bottom: 5px;
+    color: white !important;
+  }
+  
+  .active-list-item {
+    color: white !important;
+    background-color: rgba(238, 238, 238, 0.425);
+    cursor: pointer;
+    transition: 0.5s;
+    outline: none !important;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    mat-sidenav {
+      background-color: coral !important;
+      width: 23% !important;
+    }
+    .mat-list-base,
+    .mat-list-item,
+    .mat-list-item-content {
+      padding: 0px 7px !important;
+      height: 40px !important;
+    }
+    #sidnav-menu {
+      display: none;
+    }
+    #dash-icon {
+      font-size: 30px;
+    }
+    .user-name {
+      font-size: 4vw;
+    }
+  }
+  
